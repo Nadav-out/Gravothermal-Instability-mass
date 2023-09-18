@@ -33,7 +33,7 @@ c_light = 299792    # Speed of light in km/s
 # Reference values
 C_ref = 0.6
 alpha_ref = 2.2
-xi_ref = 0.1
+xi_ref = 0.11
 
 # LMFP conversion factors
 rho_s_to_rho_c_0 = 2.4
@@ -51,7 +51,7 @@ def sigma_hat(rho_s, V_max, w, sigma_over_m, C=C_ref):
         V_max (float or np.array): Maximum circular velocity.
         w (float or np.array): The cross-section velocity scale.
         sigma_over_m (float or np.array): Ratio of cross-section sigma to mass m.
-        C (float, optional): Constant C. Default is C_ref.
+        C (float, optional): Constant C. Default is 0.64.
         
     Notes:
         - All input parameters can be either single float values or NumPy arrays.
@@ -89,8 +89,8 @@ def v_rho_n_LS(rho_s, V_max, w, sigma_over_m, C=C_ref, alpha=alpha_ref):
         V_max (float or np.array): Maximum circular velocity.
         w (float or np.array): The cross-section velocity scale.
         sigma_over_m (float or np.array): Ratio of cross-section sigma to mass m.
-        C (float, optional): Constant C. Default is C_ref.
-        alpha (float, optional): Power-law index. Default is alpha_ref.
+        C (float, optional): Constant C. Default is 0.64.
+        alpha (float, optional): Power-law index. Default is 2.2.
         
     Notes:
         - All input parameters can be either single float values or NumPy arrays.
@@ -173,8 +173,8 @@ def v_rho_10(rho_s, V_max, w, sigma_over_m, C=C_ref, alpha=alpha_ref):
         V_max (float or np.array): Maximum circular velocity.
         w (float or np.array): The cross-section velocity scale.
         sigma_over_m (float or np.array): Ratio of cross-section sigma to mass m.
-        C (float, optional): Constant C. Default is C_ref.
-        alpha (float, optional): Constant alpha. Default is alpha_ref.
+        C (float, optional): Constant C. Default is 0.64.
+        alpha (float, optional): Constant alpha. Default is 2.2.
         
     Returns:
         tuple: (v_c_10, rho_c_10), where
@@ -202,9 +202,9 @@ def M_c_RI(rho_s, V_max, w, sigma_over_m, C=C_ref, alpha=alpha_ref, xi=xi_ref):
         V_max (float or np.array): Maximum circular velocity.
         w (float or np.array): The cross-section velocity scale.
         sigma_over_m (float or np.array): Ratio of cross-section sigma to mass m.
-        C (float, optional): Constant C. Default is C_ref.
-        alpha (float, optional): Constant alpha. Default is alpha_ref.
-        xi (float, optional): Constant xi. Default is xi_ref.
+        C (float, optional): Constant C. Default is 0.64.
+        alpha (float, optional): Constant alpha. Default is 2.2.
+        xi (float, optional): Constant xi. Default is 0.11.
 
     Returns:
         float or np.array: Approximated mass at the point of relativistic instability (M_c_RI).
